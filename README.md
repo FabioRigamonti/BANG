@@ -3,4 +3,4 @@
 
 GPU/CPU optimized software for morpho-kinematic galaxy parameter estimation.
 
-** Code and documentation will be uploaded soon **
+**Code and documentation will be uploaded soon**
