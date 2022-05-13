@@ -1,0 +1,253 @@
+# device:
+#   name: 
+#       Which device to use options are: 
+#          - "GPU"
+#          - "CPU"
+#
+#   fastmath:
+#       Whether to use fastmath approximation or not, options are:
+#          - True
+#          - False           
+device:
+    name: 'GPU'
+    fastmath: True
+
+# galaxy:
+#   Name: 
+#       a string to assing at the galaxy 
+#
+#   redshift:
+#       redshift of the galaxy
+
+galaxy:
+    Name: 'galassia1'
+    redshift: 0.03
+
+# galactic_components:
+#   Specify galactic components of the galaxy. The available components are:
+#       -BH (black hole)
+#       -Bulge
+#       -Disc1 (inner disc)
+#       -Disc2 (outer disc)
+#       -Halo
+#   The currently available combinations are:
+#       - Bulge+Disc1+Disc2+Halo
+#       - Bulge+Disc1+Halo
+#       - Disc1+Disc2+Halo
+galactic_components:
+    BH:
+# For all model parameters the description is similar. In the following I will describe the BH parameters,
+# please, use this descriptions as reference for all the other ones.
+#
+#   Black hole
+#       name:
+#          name of the component (please do not change it!)
+#       include:
+#           whether to include it or not in your model, options are:
+#               -True
+#               -False
+#       parameters:
+#           parameters describing the black hole
+#           name:
+#               name of the parameter used for reference in the code (DO NOT CHANGE IT!)
+#           LaTex_name:
+#               name used for the plots 
+#           bounds:
+#               boundaries used in the prior for the parameter estimation
+#           vary:
+#               wheter to keep fixed or not the parameter during the fit options are:
+#               -True
+#               -False
+#           values:
+#               value of the parameters. It is used only if include is set to True and 
+#               vary is set to False 
+#
+        name: "black hole"
+        include: False           
+        parameters:
+            Mbh:
+                name: "log10_bh_mass"               # logarithm of the Black hole mass
+                LaTex_name: "$log_{10}{M_{BH}$" 
+                bounds: [6.,10.]
+                vary: False
+                value: 9.176091259055681
+    Bulge:
+        name: 'dehnen'                             
+#       options are:
+#           - "dehnen"
+#           - "herquinst"
+#           - "jaffe"
+# Since dehnen includes Jaffe(gamma=2) and Herquinst(gamma=1). I will suggest to always keep
+# "dehnen" as name and fixing the "gamma" parameter respectively to 2 and 1.
+        include: True
+        parameters:
+            Mb:
+                name: 'log10_bulge_mass'          # logarithm of the Bulge mass
+                LaTex_name: $log_{10}{M_b}$
+                bounds: [8.5,12.]
+                vary: True
+                value: 9.5
+            Rb:
+                name: 'log10_bulge_radius'        # logarithm of the Bulge scale radius
+                LaTex_name: $log_{10}{R_b}$
+                bounds: [-2,1.5]
+                vary: True
+                value: 0
+            gamma:                                # for jaffe set gamma=2, for hernquist set gamma=1
+                name: 'gamma'
+                LaTex_name: $\gamma$              # inner slope (see Dehnen 1993 or Tremaine 1993)
+                bounds: [0,2.40]       
+                vary: True
+                value: 0
+            ML_b:
+                name: "ML_b"
+                LaTex_name: "$(M/L)_b$"           # Mass to light ratio
+                bounds: [0.1,20]
+                vary: True
+                value: 1.4541717100036693
+            
+    Disc1:
+        name: "Inner Disc"
+        include: True
+        parameters:
+            Md1:
+                name: "log10_disc1_mass"             # logarithm of the inner disc mass
+                LaTex_name: "$log_{10}{M_{d;1}}$"
+                bounds: [8.5,11.5]
+                vary: True
+                value: 9.5
+            Rd1:
+                name: "log10_disc1_radius"          # logarithm of the inner disc scale radius
+                LaTex_name: "$log_{10}{R_{d;1}}$"
+                bounds: [-2,1.5]
+                vary: True
+                value: 0
+            ML_d1:
+                name: "ML_d1"                       # Mass to light ratio of the inner disc
+                LaTex_name: "$(M/L)_{d;1}$"
+                bounds: [0.1,20]
+                vary: True
+                value: 1
+            k1:
+                name: "k1"                          # kinematic parameter of the inner disc for separating random and ordered motion
+                LaTex_name: "$k_{d;1}$"
+                bounds: [0.01,1]
+                vary: True
+                value: 0.5
+    Disc2:
+        name: "Outer Disc"
+        include: False
+        parameters:
+            Md2:
+                name: "log10_disc2_mass"            # logarithm of the outer disc mass
+                LaTex_name: "$log_{10}{M_{d;2}}$"
+                bounds: [8.5,11.5]
+                vary: True
+                value: 9.5
+            Rd2:
+                name: "log10_disc2_radius"          # logarithm of the outer disc scale radius
+                LaTex_name: "$log_{10}{R_{d;2}}$"
+                bounds: [-2,1.5]
+                vary: True
+                value: 0
+            ML_d2:
+                name: "ML_d2"                       # Mass to light ratio of the outer disc
+                LaTex_name: "$(M/L)_{d;2}$"
+                bounds: [0.1,20]
+                vary: True
+                value: 1
+            k2:
+                name: "k2"                          # kinematic parameter of the outer disc for separating random and ordered motion
+                LaTex_name: "$k_{d;2}$"
+                bounds: [0.01,1]
+                vary: True
+                value: 0.5
+    Halo:
+        name: 'NFW'         
+#       options are:
+#          - "NFW"
+#          - "herquinst"
+# In case of "NFW" set Rh name to: "concentration"
+# In case of "herquinst" set Rh name to: "log10_halo_radius"
+        include: True
+        parameters:
+            Mh:
+                name: 'log10_halo_fraction' 
+                LaTex_name: $log_{10}{f}$ 
+                bounds: [1.,2.7]    # from 10 to 500
+                vary: True
+                value: 9.5
+            Rh:
+                name: 'concentration' #'log10_halo_radius'
+#               In case of "NFW" set Rh name to: "concentration"
+#               In case of "herquinst" set Rh name to: "log10_halo_radius"
+                LaTex_name: $c$ #$log_{10}{R_h}$
+                bounds: [5,15] #[1.,3]
+                vary: True
+                value: 0
+
+Reference_frame:
+    x0:
+        name: 'x0'              # x position of the center
+        LaTex_name: '$x_0$'
+        bounds: [-1.,1.]
+        vary: True
+        value: 0.
+    y0:
+        name: 'y0'              # y position of the center
+        LaTex_name: '$y_0$'
+        bounds: [-1.,1.]
+        vary: True
+        value: 0.
+    P.A.:
+        name: 'orientation'     # position angle
+        LaTex_name: 'P.A.'
+        bounds: [-3.141592653589793,3.141592653589793]
+        vary: True
+        value: 0.
+    incl:
+        name: 'inclination'     # inclination angle
+        LaTex_name: "i"
+        bounds: [0.1,1.3]
+        vary: True
+        value: 0.1
+
+systematic_errors:
+    sys_rho:
+#   systematic error in the surface brightness. If you believe the errors in your surface brightness data
+#   then set:
+#       -vary: False
+#       -value: -10   (any negative number smaller than -5 is more then fine)
+        name: 'sys_rho'        
+        LaTex_name: "sys_rho"
+        bounds: [4,10]
+        vary: False
+        value: -10
+
+
+# Parameter estimation specifics:
+parameter_estimator:
+    Nested_sampling:           # Name of the algorithm ( https://johnveitch.github.io/cpnest/cpnest.html#cpnest.cpnest.CPNest )
+        use: True              # Wheter to use it or not (in case more algorithm will be available in the future)
+        verbose: 0             # verbosity can be 0,1,2,3 check cpnest documentation (link above)
+        poolsize: 100           
+        nthreads: 1            # Number of thread, performances decrease above 8/16.
+        nlive: 100             # Number of live points, if your likelihood is not smooth try to increase this number (do not go over 1000,
+                               # usually it is not necessary) 
+                               # The computational cost increases with an higher number of live points, but the parameter space is 
+                               # explored much better
+        maxmcmc: 80            # Maximum number of MCMC calls
+        nhamiltonian: 0        # Whether to use Hamiltonian sampling
+        nslice: 0              # Number of slicing for your sampler
+        resume: 1              # resume or not (every 10 min a checkpoint is saved to disc)
+
+# General settings    
+Settings:
+    input_path: "mock_data.npy"  # path/filename of your data
+    output_path: "run_test/"       # output directory for all the plots and results (always put / at the end of the string)
+    sys_rho: True              # wheter to use or not sys_rho. Even if sys_rho is set to False keep vary: False and value: -10 in the options above
+    kin_psf_sigma_kpc : 1.374  # sigma of the kinematic psf in kpc
+    pho_psf_sigma_kpc : 1.374  # sigma of the photometric psf in kpc
+    N_pixels : 12              # width in number of pixels of the area to consider for psf convolution (check "refined_grid_indexing" in data.py for more details)
+    resolution : 1             # resolution of the grid for psf convolution (check "refined_grid_indexing" in data.py for more details)
+    use_ML : True              # ML ratio is considered in the fit
