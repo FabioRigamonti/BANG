@@ -5,9 +5,9 @@ BANG is a GPU/CPU-python code for modelling both the photometry and kinematics o
 The underlying model is the superposition of different component the user has 3 possible 
 combination:
 
-*Bulge + inner disc + outer disc + Halo
-*Bulge +  disc  + Halo
-*inner disc + outer disc + Halo
+* Bulge + inner disc + outer disc + Halo
+* Bulge +  disc  + Halo
+* inner disc + outer disc + Halo
 
 For any detail about the model construction see Rigamonti et al. 2022.
 
