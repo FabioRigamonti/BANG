@@ -1,0 +1,5 @@
+[build-system]
+requires = ["setuptools>=45","astropy>=5.0.4","corner>=2.2.1",
+            "cpnest>=0.11.3","Cython>=0.29.27","matplotlib>=3.5.1",
+            "numba==0.52","numpy>=1.21.5","PyYAML>=6.0","scipy>=1.7.3"]
+build-backend = "setuptools.build_meta"

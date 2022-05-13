@@ -1,0 +1,13 @@
+Build direcory like the one already present
+Make sure to include all cython packages
+
+python3 setup.py sdist bdist_wheel
+
+auditwheel repair dist/<your_package_name>-cp38-cp38-linux_86_64.whl --plat manylinux2014_x86_64
+
+mv wheelhouse/* dist
+rm dist/*-cp38-cp38-linux_x86_64.whl
+
+python3 -m twine upload --repository testpypi dist/*
+
+
