@@ -1,11 +1,11 @@
 import yaml
-from parameter_search import GalaxyModel
-import data as d
+from BANG.parameter_search import GalaxyModel
+import BANG.data as d
 import numpy as np 
 import cpnest
-from data import data
-from result_analysis import Result_Analysis
-from model_creation import model 
+from BANG.data import data
+from BANG.result_analysis import Result_Analysis
+from BANG.model_creation import model 
 import matplotlib.pyplot as plt
 from astropy.cosmology import FlatLambdaCDM
 import os

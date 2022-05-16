@@ -1,3 +1,18 @@
+Metadata-Version: 2.1
+Name: BANGal
+Version: 0.0.0
+Summary: BANG: BAyesian modelliNg of Galaxies
+Home-page: https://github.com/FabioRigamonti/BANG
+Author: Fabio Rigamonti
+Author-email: frigamonti@uninsubria.it
+Project-URL: Bug Tracker, https://github.com/FabioRigamonti/BANG/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENCE
+
 # BANG 
 ## BAyesian decomposiotioN of Galaxies
 
@@ -36,9 +51,9 @@ For installing BANG you can follow these instructions:
             git clone https://github.com/FabioRigamonti/BANG.git
 
 2- Instal the python modules with: 
-            pip install BANGal
+            pip install BANG
 
-3- Copy the files:
+3- Copy the files/directory:
         setup_easy.pyx
         utils_easy.pyx
         dehnen/

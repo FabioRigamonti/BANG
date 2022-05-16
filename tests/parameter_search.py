@@ -2,11 +2,11 @@
 # -*- coding: utf-8 -*-
 import cpnest.model
 import numpy as np
-import data as d
+import BANG.data as d
 import math
 from numba import cuda
 import time
-from model_creation import model
+from BANG.model_creation import model
 
 def pp(l,r):
     return -np.sum(np.log10(r-l))

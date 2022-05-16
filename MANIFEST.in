@@ -1,3 +1,5 @@
-global-include *.pyx
-global-include *.pxd
-global-include *.c*
+include src/BANG/utils_easy.pyx
+include src/BANG/__init__.pyx 
+include src/BANG/__init__.c 
+include src/BANG/utils_easy.c
+graft src/BANG/dehnen

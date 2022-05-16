@@ -1,4 +1,4 @@
-from configuration import Config_reader
+from BANG.configuration import Config_reader
 import matplotlib.pyplot as plt
 
 '''
