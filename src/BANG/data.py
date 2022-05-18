@@ -345,14 +345,28 @@ class data:
         new_true_y_tmp = np.linspace(self.ymin-N_px*self.dx,self.ymax+N_px*self.dx,self.N+2*N_px)
 
         # Make sure it is in zero
-        ind_min_new_x = np.argmin(new_true_x_tmp*new_true_x_tmp)
-        ind_min_new_y = np.argmin(new_true_y_tmp*new_true_y_tmp)
-        ind_min_x     = np.argmin(self.x_true*self.x_true)
-        ind_min_y     = np.argmin(self.y_true*self.y_true)
-        new_true_x_tmp= new_true_x_tmp-new_true_x_tmp[ind_min_new_x]
-        new_true_y_tmp= new_true_y_tmp-new_true_y_tmp[ind_min_new_y] 
-        self.x_true = self.x_true - self.x_true[ind_min_x] 
-        self.y_true = self.y_true - self.y_true[ind_min_y]
+        if new_true_x_tmp.shape[0]%2==0:
+            ind_min_new_x = np.argsort(new_true_x_tmp*new_true_x_tmp)
+            ind_min_new_y = np.argsort(new_true_y_tmp*new_true_y_tmp)
+            ind_min_x     = np.argsort(self.x_true*self.x_true)
+            ind_min_y     = np.argsort(self.y_true*self.y_true)
+            sub_new_x     = (new_true_x_tmp[ind_min_new_x[0]]+new_true_x_tmp[ind_min_new_x[1]])*0.5
+            sub_new_y     = (new_true_y_tmp[ind_min_new_y[0]]+new_true_y_tmp[ind_min_new_y[1]])*0.5
+            sub_x         = (self.x_true[ind_min_x[0]]+self.x_true[ind_min_x[1]])*0.5
+            sub_y         = (self.y_true[ind_min_y[0]]+self.y_true[ind_min_y[1]])*0.5
+            new_true_x_tmp= new_true_x_tmp-sub_new_x
+            new_true_y_tmp= new_true_y_tmp-sub_new_y
+            self.x_true = self.x_true-sub_x 
+            self.y_true = self.y_true-sub_y
+        else:            
+            ind_min_new_x = np.argmin(new_true_x_tmp*new_true_x_tmp)
+            ind_min_new_y = np.argmin(new_true_y_tmp*new_true_y_tmp)
+            ind_min_x     = np.argmin(self.x_true*self.x_true)
+            ind_min_y     = np.argmin(self.y_true*self.y_true)
+            new_true_x_tmp= new_true_x_tmp-new_true_x_tmp[ind_min_new_x]
+            new_true_y_tmp= new_true_y_tmp-new_true_y_tmp[ind_min_new_y] 
+            self.x_true = self.x_true - self.x_true[ind_min_x] 
+            self.y_true = self.y_true - self.y_true[ind_min_y]
 
         self.new_true_x = np.array([])
         self.new_true_y = np.array([])

@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: BANGal
-Version: 0.0.0
+Version: 0.0.1
 Summary: BANG: BAyesian modelliNg of Galaxies
 Home-page: https://github.com/FabioRigamonti/BANG
 Author: Fabio Rigamonti
@@ -51,9 +51,9 @@ For installing BANG you can follow these instructions:
             git clone https://github.com/FabioRigamonti/BANG.git
 
 2- Instal the python modules with: 
-            pip install BANG
+            pip install BANGal
 
-3- Copy the files/directory:
+3- Copy the files:
         setup_easy.pyx
         utils_easy.pyx
         dehnen/

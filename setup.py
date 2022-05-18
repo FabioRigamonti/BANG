@@ -29,7 +29,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="BANGal",
-    version="0.0.0",
+    version="0.0.1",
     author="Fabio Rigamonti",
     author_email="frigamonti@uninsubria.it",
     description="BANG: BAyesian modelliNg of Galaxies",
