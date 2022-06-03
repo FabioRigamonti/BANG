@@ -1271,6 +1271,7 @@ class model_gpu_BD():
             
         '''
         path = os.path.dirname(os.path.realpath(__file__))
+        path += '/dehnen/'
         s_grid        = np.load(path+'s_grid.npy')
         gamma_grid    = np.load(path+'gamma_grid.npy') 
         rho_grid      = np.load(path+'dehnen_brightness.npy')
@@ -3256,6 +3257,7 @@ class model_gpu():
             
         '''
         path = os.path.dirname(os.path.realpath(__file__))
+        path += '/dehnen/'
         s_grid        = np.load(path+'s_grid.npy')
         gamma_grid    = np.load(path+'gamma_grid.npy') 
         rho_grid      = np.load(path+'dehnen_brightness.npy')
@@ -4010,6 +4012,7 @@ class model_cpu():
             
         '''
         path = os.path.dirname(os.path.realpath(__file__))
+        path += '/dehnen/'
         s_grid        = np.load(path+'s_grid.npy')
         gamma_grid    = np.load(path+'gamma_grid.npy') 
         rho_grid      = np.load(path+'dehnen_brightness.npy')
@@ -4361,6 +4364,7 @@ class model_cpu_BD():
             
         '''
         path = os.path.dirname(os.path.realpath(__file__))
+        path += '/dehnen/'
         s_grid        = np.load(path+'s_grid.npy')
         gamma_grid    = np.load(path+'gamma_grid.npy') 
         rho_grid      = np.load(path+'dehnen_brightness.npy')
