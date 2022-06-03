@@ -5,7 +5,7 @@ import math
 from numba import cuda
 import numpy as np   
 #import torch   
-
+import os
 
 '''
 Models class, it contains all the possible model combinations i.e. :
@@ -1270,7 +1270,7 @@ class model_gpu_BD():
             Returns:
             
         '''
-        path = './dehnen/'
+        path = os.path.dirname(os.path.realpath(__file__))
         s_grid        = np.load(path+'s_grid.npy')
         gamma_grid    = np.load(path+'gamma_grid.npy') 
         rho_grid      = np.load(path+'dehnen_brightness.npy')
@@ -3255,7 +3255,7 @@ class model_gpu():
             Returns:
             
         '''
-        path = './dehnen/'
+        path = os.path.dirname(os.path.realpath(__file__))
         s_grid        = np.load(path+'s_grid.npy')
         gamma_grid    = np.load(path+'gamma_grid.npy') 
         rho_grid      = np.load(path+'dehnen_brightness.npy')
@@ -4009,7 +4009,7 @@ class model_cpu():
             Returns:
             
         '''
-        path = './dehnen/'
+        path = os.path.dirname(os.path.realpath(__file__))
         s_grid        = np.load(path+'s_grid.npy')
         gamma_grid    = np.load(path+'gamma_grid.npy') 
         rho_grid      = np.load(path+'dehnen_brightness.npy')
@@ -4360,7 +4360,7 @@ class model_cpu_BD():
             Returns:
             
         '''
-        path = './dehnen/'
+        path = os.path.dirname(os.path.realpath(__file__))
         s_grid        = np.load(path+'s_grid.npy')
         gamma_grid    = np.load(path+'gamma_grid.npy') 
         rho_grid      = np.load(path+'dehnen_brightness.npy')
