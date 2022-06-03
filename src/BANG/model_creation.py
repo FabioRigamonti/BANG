@@ -85,11 +85,11 @@ class model_gpu_B_BH():
     def _function_definitionBBH(self):
         if self.fast_math == True:
             if self.bulge_type=='hernquist':
-                from utils_numba_1D_32bit import herquinst_rho
-                from utils_numba_1D_32bit_no_proxy import herquinst_sigma_BH
-                from utils_numba_1D_32bit_no_proxy import all_Xdot
-                from utils_numba_1D_32bit_no_proxy import Y1
-                from utils_numba_1D_32bit_no_proxy import Y2
+                from BANG.utils_numba_1D_32bit import herquinst_rho
+                from BANG.utils_numba_1D_32bit_no_proxy import herquinst_sigma_BH
+                from BANG.utils_numba_1D_32bit_no_proxy import all_Xdot
+                from BANG.utils_numba_1D_32bit_no_proxy import Y1
+                from BANG.utils_numba_1D_32bit_no_proxy import Y2
                 self._bulge_rho   = herquinst_rho 
                 self._bulge_sigma = herquinst_sigma_BH 
                 self._all_Xdot    = all_Xdot
@@ -103,18 +103,18 @@ class model_gpu_B_BH():
                 print('Error')
                 exit()
 
-            from utils_numba_1D_32bit import avg_rho_v_only_bulge
-            from utils_numba_1D_32bit import avg_LM_only_bulge
-            from utils_numba_1D_32bit import sum_likelihood
-            from utils_numba_1D_32bit import coordinate_transformation
-            from utils_numba_1D_32bit import Xfunction
+            from BANG.utils_numba_1D_32bit import avg_rho_v_only_bulge
+            from BANG.utils_numba_1D_32bit import avg_LM_only_bulge
+            from BANG.utils_numba_1D_32bit import sum_likelihood
+            from BANG.utils_numba_1D_32bit import coordinate_transformation
+            from BANG.utils_numba_1D_32bit import Xfunction
         else:
             if self.bulge_type=='hernquist':
-                from utils_numba_1D_32bit_no_proxy import herquinst_rho
-                from utils_numba_1D_32bit_no_proxy import herquinst_sigma_BH
-                from utils_numba_1D_32bit_no_proxy import all_Xdot
-                from utils_numba_1D_32bit_no_proxy import Y1
-                from utils_numba_1D_32bit_no_proxy import Y2
+                from BANG.utils_numba_1D_32bit_no_proxy import herquinst_rho
+                from BANG.utils_numba_1D_32bit_no_proxy import herquinst_sigma_BH
+                from BANG.utils_numba_1D_32bit_no_proxy import all_Xdot
+                from BANG.utils_numba_1D_32bit_no_proxy import Y1
+                from BANG.utils_numba_1D_32bit_no_proxy import Y2
                 self._bulge_rho   = herquinst_rho 
                 self._bulge_sigma = herquinst_sigma_BH 
                 self._all_Xdot    = all_Xdot
@@ -127,11 +127,11 @@ class model_gpu_B_BH():
                 print('Error')
                 exit()
 
-            from utils_numba_1D_32bit_no_proxy import avg_rho_v_only_bulge
-            from utils_numba_1D_32bit_no_proxy import avg_LM_only_bulge
-            from utils_numba_1D_32bit_no_proxy import sum_likelihood
-            from utils_numba_1D_32bit_no_proxy import coordinate_transformation
-            from utils_numba_1D_32bit_no_proxy import Xfunction
+            from BANG.utils_numba_1D_32bit_no_proxy import avg_rho_v_only_bulge
+            from BANG.utils_numba_1D_32bit_no_proxy import avg_LM_only_bulge
+            from BANG.utils_numba_1D_32bit_no_proxy import sum_likelihood
+            from BANG.utils_numba_1D_32bit_no_proxy import coordinate_transformation
+            from BANG.utils_numba_1D_32bit_no_proxy import Xfunction
 
        
         self._coordinate_transformation = coordinate_transformation
@@ -462,13 +462,13 @@ class model_gpu_BD_BH():
     def _function_definitionBDBH(self):
         if self.fast_math == True:
             if self.bulge_type=='hernquist':
-                from utils_numba_1D_32bit import herquinst_rho
-                from utils_numba_1D_32bit_no_proxy import herquinst_sigma_BH
-                from utils_numba_1D_32bit import v_H
-                from utils_numba_1D_32bit_no_proxy import all_Xdot
-                from utils_numba_1D_32bit_no_proxy import Y1
-                from utils_numba_1D_32bit_no_proxy import Y2
-                from utils_numba_1D_32bit_no_proxy import v_tot_BD_BH
+                from BANG.utils_numba_1D_32bit import herquinst_rho
+                from BANG.utils_numba_1D_32bit_no_proxy import herquinst_sigma_BH
+                from BANG.utils_numba_1D_32bit import v_H
+                from BANG.utils_numba_1D_32bit_no_proxy import all_Xdot
+                from BANG.utils_numba_1D_32bit_no_proxy import Y1
+                from BANG.utils_numba_1D_32bit_no_proxy import Y2
+                from BANG.utils_numba_1D_32bit_no_proxy import v_tot_BD_BH
                 self._bulge_rho   = herquinst_rho 
                 self._bulge_sigma = herquinst_sigma_BH 
                 self._bulge_vel   = v_H 
@@ -483,23 +483,23 @@ class model_gpu_BD_BH():
                 print('Error')
                 exit()
 
-            from utils_numba_1D_32bit import rho_D
-            from utils_numba_1D_32bit import v_D
-            from utils_numba_1D_32bit import v_H
-            from utils_numba_1D_32bit import avg_rho_v_2_vis_components
-            from utils_numba_1D_32bit import avg_LM_2_vis_components
-            from utils_numba_1D_32bit import sum_likelihood
-            from utils_numba_1D_32bit import coordinate_transformation
-            from utils_numba_1D_32bit import Xfunction
-            from utils_numba_1D_32bit_no_proxy import v_BH
+            from BANG.utils_numba_1D_32bit import rho_D
+            from BANG.utils_numba_1D_32bit import v_D
+            from BANG.utils_numba_1D_32bit import v_H
+            from BANG.utils_numba_1D_32bit import avg_rho_v_2_vis_components
+            from BANG.utils_numba_1D_32bit import avg_LM_2_vis_components
+            from BANG.utils_numba_1D_32bit import sum_likelihood
+            from BANG.utils_numba_1D_32bit import coordinate_transformation
+            from BANG.utils_numba_1D_32bit import Xfunction
+            from BANG.utils_numba_1D_32bit_no_proxy import v_BH
         else:
             if self.bulge_type=='hernquist':
-                from utils_numba_1D_32bit_no_proxy import herquinst_rho
-                from utils_numba_1D_32bit_no_proxy import herquinst_sigma_BH
-                from utils_numba_1D_32bit_no_proxy import v_H
-                from utils_numba_1D_32bit_no_proxy import all_Xdot
-                from utils_numba_1D_32bit_no_proxy import Y1
-                from utils_numba_1D_32bit_no_proxy import Y2
+                from BANG.utils_numba_1D_32bit_no_proxy import herquinst_rho
+                from BANG.utils_numba_1D_32bit_no_proxy import herquinst_sigma_BH
+                from BANG.utils_numba_1D_32bit_no_proxy import v_H
+                from BANG.utils_numba_1D_32bit_no_proxy import all_Xdot
+                from BANG.utils_numba_1D_32bit_no_proxy import Y1
+                from BANG.utils_numba_1D_32bit_no_proxy import Y2
                 self._bulge_rho   = herquinst_rho 
                 self._bulge_sigma = herquinst_sigma_BH 
                 self._bulge_vel   = v_H 
@@ -513,16 +513,16 @@ class model_gpu_BD_BH():
                 print('Error')
                 exit()
 
-            from utils_numba_1D_32bit_no_proxy import rho_D
-            from utils_numba_1D_32bit_no_proxy import v_D
-            from utils_numba_1D_32bit_no_proxy import v_H
-            from utils_numba_1D_32bit_no_proxy import v_tot_BD_BH
-            from utils_numba_1D_32bit_no_proxy import avg_rho_v_2_vis_components
-            from utils_numba_1D_32bit_no_proxy import avg_LM_2_vis_components
-            from utils_numba_1D_32bit_no_proxy import sum_likelihood
-            from utils_numba_1D_32bit_no_proxy import coordinate_transformation
-            from utils_numba_1D_32bit_no_proxy import Xfunction
-            from utils_numba_1D_32bit_no_proxy import v_BH
+            from BANG.utils_numba_1D_32bit_no_proxy import rho_D
+            from BANG.utils_numba_1D_32bit_no_proxy import v_D
+            from BANG.utils_numba_1D_32bit_no_proxy import v_H
+            from BANG.utils_numba_1D_32bit_no_proxy import v_tot_BD_BH
+            from BANG.utils_numba_1D_32bit_no_proxy import avg_rho_v_2_vis_components
+            from BANG.utils_numba_1D_32bit_no_proxy import avg_LM_2_vis_components
+            from BANG.utils_numba_1D_32bit_no_proxy import sum_likelihood
+            from BANG.utils_numba_1D_32bit_no_proxy import coordinate_transformation
+            from BANG.utils_numba_1D_32bit_no_proxy import Xfunction
+            from BANG.utils_numba_1D_32bit_no_proxy import v_BH
 
        
         self._coordinate_transformation = coordinate_transformation
@@ -1052,24 +1052,24 @@ class model_gpu_BD():
         '''
         if self.fast_math == True:
             if self.bulge_type=='hernquist':
-                from utils_numba_1D_32bit import herquinst_rho
-                from utils_numba_1D_32bit import herquinst_sigma
-                from utils_numba_1D_32bit import v_H
+                from BANG.utils_numba_1D_32bit import herquinst_rho
+                from BANG.utils_numba_1D_32bit import herquinst_sigma
+                from BANG.utils_numba_1D_32bit import v_H
                 self._bulge_rho   = herquinst_rho 
                 self._bulge_sigma = herquinst_sigma 
                 self._bulge_vel   = v_H 
             elif self.bulge_type=='jaffe':
-                from utils_numba_1D_32bit import jaffe_rho        
-                from utils_numba_1D_32bit import jaffe_sigma  
-                from utils_numba_1D_32bit import v_J
+                from BANG.utils_numba_1D_32bit import jaffe_rho        
+                from BANG.utils_numba_1D_32bit import jaffe_sigma  
+                from BANG.utils_numba_1D_32bit import v_J
                 self._bulge_rho   = jaffe_rho
                 self._bulge_sigma = jaffe_sigma
                 self._bulge_vel   = v_J
                 print('Warning bulge dispersion has not yet be implemented in fast math mode')
             elif self.bulge_type=='dehnen':
-                from utils_numba_1D_32bit import dehnen        
-                #from utils_numba_1D_32bit import jaffe_sigma  
-                from utils_numba_1D_32bit import v_dehnen
+                from BANG.utils_numba_1D_32bit import dehnen        
+                #from BANG.utils_numba_1D_32bit import jaffe_sigma  
+                from BANG.utils_numba_1D_32bit import v_dehnen
                 self._bulge = dehnen
                 self._bulge_vel = v_dehnen
             else:
@@ -1077,45 +1077,45 @@ class model_gpu_BD():
                 exit()
             
             if self.halo_type=='hernquist':
-                from utils_numba_1D_32bit import v_Halo
+                from BANG.utils_numba_1D_32bit import v_Halo
                 self._halo_vel = v_Halo
                 self.halo_radius_name = 'log10_halo_radius'
                 self.halo_mass_name   = 'log10_halo_fraction'
                 
             elif self.halo_type=='NFW':
-                from utils_numba_1D_32bit import v_NFW
+                from BANG.utils_numba_1D_32bit import v_NFW
                 self._halo_vel = v_NFW
                 self.halo_radius_name = 'concentration'
                 self.halo_mass_name   = 'log10_halo_fraction'
 
-            from utils_numba_1D_32bit import rho_D
-            from utils_numba_1D_32bit import v_D
-            from utils_numba_1D_32bit import v_H
-            from utils_numba_1D_32bit import avg_rho_v_2_vis_components
-            from utils_numba_1D_32bit import avg_sigma_2_vis_components
-            from utils_numba_1D_32bit import sum_likelihood
-            from utils_numba_1D_32bit import coordinate_transformation
-            from utils_numba_1D_32bit import Xfunction
-            from utils_numba_1D_32bit_no_proxy import v_tot_BD
+            from BANG.utils_numba_1D_32bit import rho_D
+            from BANG.utils_numba_1D_32bit import v_D
+            from BANG.utils_numba_1D_32bit import v_H
+            from BANG.utils_numba_1D_32bit import avg_rho_v_2_vis_components
+            from BANG.utils_numba_1D_32bit import avg_sigma_2_vis_components
+            from BANG.utils_numba_1D_32bit import sum_likelihood
+            from BANG.utils_numba_1D_32bit import coordinate_transformation
+            from BANG.utils_numba_1D_32bit import Xfunction
+            from BANG.utils_numba_1D_32bit_no_proxy import v_tot_BD
 
         else:
             if self.bulge_type=='hernquist':
-                from utils_numba_1D_32bit_no_proxy import herquinst_rho
-                from utils_numba_1D_32bit_no_proxy import herquinst_sigma
-                from utils_numba_1D_32bit_no_proxy import v_H
+                from BANG.utils_numba_1D_32bit_no_proxy import herquinst_rho
+                from BANG.utils_numba_1D_32bit_no_proxy import herquinst_sigma
+                from BANG.utils_numba_1D_32bit_no_proxy import v_H
                 self._bulge_rho   = herquinst_rho 
                 self._bulge_sigma = herquinst_sigma_BH 
                 self._bulge_vel   = v_H 
             elif self.bulge_type=='jaffe':
-                from utils_numba_1D_32bit_no_proxy import jaffe_rho        
-                from utils_numba_1D_32bit_no_proxy import jaffe_sigma  
-                from utils_numba_1D_32bit_no_proxy import v_J
+                from BANG.utils_numba_1D_32bit_no_proxy import jaffe_rho        
+                from BANG.utils_numba_1D_32bit_no_proxy import jaffe_sigma  
+                from BANG.utils_numba_1D_32bit_no_proxy import v_J
                 self._bulge_rho   = jaffe_rho
                 self._bulge_sigma = jaffe_sigma
                 self._bulge_vel   = v_J
             elif self.bulge_type=='dehnen':
-                from utils_numba_1D_32bit import dehnen        
-                from utils_numba_1D_32bit import v_dehnen
+                from BANG.utils_numba_1D_32bit import dehnen        
+                from BANG.utils_numba_1D_32bit import v_dehnen
                 self._bulge = dehnen
                 self._bulge_vel = v_dehnen
             else:
@@ -1123,26 +1123,26 @@ class model_gpu_BD():
                 exit()
             
             if self.halo_type=='hernquist':
-                from utils_numba_1D_32bit import v_Halo
+                from BANG.utils_numba_1D_32bit import v_Halo
                 self._halo_vel = v_Halo
                 self.halo_radius_name = 'log10_halo_radius'
                 self.halo_mass_name   = 'log10_halo_fraction'
                 
             elif self.halo_type=='NFW':
-                from utils_numba_1D_32bit import v_NFW
+                from BANG.utils_numba_1D_32bit import v_NFW
                 self._halo_vel = v_NFW
                 self.halo_radius_name = 'concentration'
                 self.halo_mass_name   = 'log10_halo_fraction'
             
-            from utils_numba_1D_32bit_no_proxy import rho_D
-            from utils_numba_1D_32bit_no_proxy import v_D
-            from utils_numba_1D_32bit_no_proxy import v_H
-            from utils_numba_1D_32bit_no_proxy import v_tot_BD
-            from utils_numba_1D_32bit_no_proxy import avg_rho_v_2_vis_components
-            from utils_numba_1D_32bit_no_proxy import avg_LM_2_vis_components
-            from utils_numba_1D_32bit_no_proxy import sum_likelihood
-            from utils_numba_1D_32bit_no_proxy import coordinate_transformation
-            from utils_numba_1D_32bit_no_proxy import Xfunction
+            from BANG.utils_numba_1D_32bit_no_proxy import rho_D
+            from BANG.utils_numba_1D_32bit_no_proxy import v_D
+            from BANG.utils_numba_1D_32bit_no_proxy import v_H
+            from BANG.utils_numba_1D_32bit_no_proxy import v_tot_BD
+            from BANG.utils_numba_1D_32bit_no_proxy import avg_rho_v_2_vis_components
+            from BANG.utils_numba_1D_32bit_no_proxy import avg_LM_2_vis_components
+            from BANG.utils_numba_1D_32bit_no_proxy import sum_likelihood
+            from BANG.utils_numba_1D_32bit_no_proxy import coordinate_transformation
+            from BANG.utils_numba_1D_32bit_no_proxy import Xfunction
 
        
         self._coordinate_transformation = coordinate_transformation
@@ -1525,8 +1525,8 @@ class model_gpu_BD():
             self._init_dataBD()
             self._function_definitionBD()
             self._load_tabulated()
-            from utils_numba_1D_32bit import avg_rho_v_2_vis_components_all_output
-            from utils_numba_1D_32bit import avg_sigma_2_vis_components_all_output
+            from BANG.utils_numba_1D_32bit import avg_rho_v_2_vis_components_all_output
+            from BANG.utils_numba_1D_32bit import avg_sigma_2_vis_components_all_output
             self._avg_sigma                 = avg_sigma_2_vis_components_all_output
             self._avg_rho_v                 = avg_rho_v_2_vis_components_all_output
             self._load_device_model()
@@ -1538,8 +1538,8 @@ class model_gpu_BD():
             self._init_dataBD()
             self._function_definitionBD()
             self._load_tabulated()
-            from utils_numba_1D_32bit import avg_rho_v_2_vis_components_all_output
-            from utils_numba_1D_32bit import avg_sigma_2_vis_components_all_output
+            from BANG.utils_numba_1D_32bit import avg_rho_v_2_vis_components_all_output
+            from BANG.utils_numba_1D_32bit import avg_sigma_2_vis_components_all_output
             self._avg_sigma                 = avg_sigma_2_vis_components_all_output
             self._avg_rho_v                 = avg_rho_v_2_vis_components_all_output
             self._load_device_model()
@@ -1840,46 +1840,46 @@ class model_gpu_DD():
         '''
         if self.fast_math == True:
             if self.halo_type=='hernquist':
-                from utils_numba_1D_32bit import v_Halo
+                from BANG.utils_numba_1D_32bit import v_Halo
                 self._halo_vel = v_Halo
                 self.halo_radius_name = 'log10_halo_radius'
                 self.halo_mass_name   = 'log10_halo_fraction'
                 
             elif self.halo_type=='NFW':
-                from utils_numba_1D_32bit import v_NFW
+                from BANG.utils_numba_1D_32bit import v_NFW
                 self._halo_vel = v_NFW
                 self.halo_radius_name = 'concentration'
                 self.halo_mass_name   = 'log10_halo_fraction'
 
-            from utils_numba_1D_32bit import rho_D
-            from utils_numba_1D_32bit import v_D
-            from utils_numba_1D_32bit import avg_rho_v_2_vis_components_DD
-            from utils_numba_1D_32bit import avg_sigma_2_vis_components_DD
-            from utils_numba_1D_32bit import sum_likelihood
-            from utils_numba_1D_32bit import coordinate_transformation
-            from utils_numba_1D_32bit_no_proxy import v_tot_BD
+            from BANG.utils_numba_1D_32bit import rho_D
+            from BANG.utils_numba_1D_32bit import v_D
+            from BANG.utils_numba_1D_32bit import avg_rho_v_2_vis_components_DD
+            from BANG.utils_numba_1D_32bit import avg_sigma_2_vis_components_DD
+            from BANG.utils_numba_1D_32bit import sum_likelihood
+            from BANG.utils_numba_1D_32bit import coordinate_transformation
+            from BANG.utils_numba_1D_32bit_no_proxy import v_tot_BD
 
         else:
             if self.halo_type=='hernquist':
-                from utils_numba_1D_32bit import v_Halo
+                from BANG.utils_numba_1D_32bit import v_Halo
                 self._halo_vel = v_Halo
                 self.halo_radius_name = 'log10_halo_radius'
                 self.halo_mass_name   = 'log10_halo_fraction'
                 
             elif self.halo_type=='NFW':
-                from utils_numba_1D_32bit import v_NFW
+                from BANG.utils_numba_1D_32bit import v_NFW
                 self._halo_vel = v_NFW
                 self.halo_radius_name = 'concentration'
                 self.halo_mass_name   = 'log10_halo_fraction'
             
-            from utils_numba_1D_32bit_no_proxy import rho_D
-            from utils_numba_1D_32bit_no_proxy import v_D
-            from utils_numba_1D_32bit_no_proxy import v_tot_BD
-            from utils_numba_1D_32bit_no_proxy import avg_rho_v_2_vis_components
-            from utils_numba_1D_32bit_no_proxy import avg_LM_2_vis_components
-            from utils_numba_1D_32bit_no_proxy import sum_likelihood
-            from utils_numba_1D_32bit_no_proxy import coordinate_transformation
-            from utils_numba_1D_32bit_no_proxy import Xfunction
+            from BANG.utils_numba_1D_32bit_no_proxy import rho_D
+            from BANG.utils_numba_1D_32bit_no_proxy import v_D
+            from BANG.utils_numba_1D_32bit_no_proxy import v_tot_BD
+            from BANG.utils_numba_1D_32bit_no_proxy import avg_rho_v_2_vis_components
+            from BANG.utils_numba_1D_32bit_no_proxy import avg_LM_2_vis_components
+            from BANG.utils_numba_1D_32bit_no_proxy import sum_likelihood
+            from BANG.utils_numba_1D_32bit_no_proxy import coordinate_transformation
+            from BANG.utils_numba_1D_32bit_no_proxy import Xfunction
 
        
         self._coordinate_transformation = coordinate_transformation
@@ -2197,8 +2197,8 @@ class model_gpu_DD():
             self._load_to_deviceDD()
             self._init_data()
             self._function_definitionDD()
-            from utils_numba_1D_32bit import avg_rho_v_2_vis_components_DD_all_output
-            from utils_numba_1D_32bit import avg_sigma_2_vis_components_DD_all_output
+            from BANG.utils_numba_1D_32bit import avg_rho_v_2_vis_components_DD_all_output
+            from BANG.utils_numba_1D_32bit import avg_sigma_2_vis_components_DD_all_output
             self._avg_sigma                 = avg_sigma_2_vis_components_DD_all_output
             self._avg_rho_v                 = avg_rho_v_2_vis_components_DD_all_output
             self._load_device_model()
@@ -2209,8 +2209,8 @@ class model_gpu_DD():
             self._load_to_deviceDD()
             self._init_data()
             self._function_definitionDD()
-            from utils_numba_1D_32bit import avg_rho_v_2_vis_components_DD_all_output
-            from utils_numba_1D_32bit import avg_sigma_2_vis_components_DD_all_output
+            from BANG.utils_numba_1D_32bit import avg_rho_v_2_vis_components_DD_all_output
+            from BANG.utils_numba_1D_32bit import avg_sigma_2_vis_components_DD_all_output
             self._avg_sigma                 = avg_sigma_2_vis_components_DD_all_output
             self._avg_rho_v                 = avg_rho_v_2_vis_components_DD_all_output
             self._load_device_model()
@@ -2399,13 +2399,13 @@ class model_gpu_BH():
     def _function_definitionBH(self):
         if self.fast_math == True:
             if self.bulge_type=='hernquist':
-                from utils_numba_1D_32bit import herquinst_rho
-                from utils_numba_1D_32bit_no_proxy import herquinst_sigma_BH
-                from utils_numba_1D_32bit import v_H
-                from utils_numba_1D_32bit_no_proxy import all_Xdot
-                from utils_numba_1D_32bit_no_proxy import Y1
-                from utils_numba_1D_32bit_no_proxy import Y2
-                from utils_numba_1D_32bit_no_proxy import v_tot_BH
+                from BANG.utils_numba_1D_32bit import herquinst_rho
+                from BANG.utils_numba_1D_32bit_no_proxy import herquinst_sigma_BH
+                from BANG.utils_numba_1D_32bit import v_H
+                from BANG.utils_numba_1D_32bit_no_proxy import all_Xdot
+                from BANG.utils_numba_1D_32bit_no_proxy import Y1
+                from BANG.utils_numba_1D_32bit_no_proxy import Y2
+                from BANG.utils_numba_1D_32bit_no_proxy import v_tot_BH
                 self._bulge_rho   = herquinst_rho 
                 self._bulge_sigma = herquinst_sigma_BH 
                 self._bulge_vel   = v_H 
@@ -2420,23 +2420,23 @@ class model_gpu_BH():
                 print('Error')
                 exit()
 
-            from utils_numba_1D_32bit import rho_D
-            from utils_numba_1D_32bit import v_D
-            from utils_numba_1D_32bit import v_H
-            from utils_numba_1D_32bit import avg_rho_v
-            from utils_numba_1D_32bit import avg_LM
-            from utils_numba_1D_32bit import sum_likelihood
-            from utils_numba_1D_32bit import coordinate_transformation
-            from utils_numba_1D_32bit import Xfunction
-            from utils_numba_1D_32bit_no_proxy import v_BH
+            from BANG.utils_numba_1D_32bit import rho_D
+            from BANG.utils_numba_1D_32bit import v_D
+            from BANG.utils_numba_1D_32bit import v_H
+            from BANG.utils_numba_1D_32bit import avg_rho_v
+            from BANG.utils_numba_1D_32bit import avg_LM
+            from BANG.utils_numba_1D_32bit import sum_likelihood
+            from BANG.utils_numba_1D_32bit import coordinate_transformation
+            from BANG.utils_numba_1D_32bit import Xfunction
+            from BANG.utils_numba_1D_32bit_no_proxy import v_BH
         else:
             if self.bulge_type=='hernquist':
-                from utils_numba_1D_32bit_no_proxy import herquinst_rho
-                from utils_numba_1D_32bit_no_proxy import herquinst_sigma_BH
-                from utils_numba_1D_32bit_no_proxy import v_H
-                from utils_numba_1D_32bit_no_proxy import all_Xdot
-                from utils_numba_1D_32bit_no_proxy import Y1
-                from utils_numba_1D_32bit_no_proxy import Y2
+                from BANG.utils_numba_1D_32bit_no_proxy import herquinst_rho
+                from BANG.utils_numba_1D_32bit_no_proxy import herquinst_sigma_BH
+                from BANG.utils_numba_1D_32bit_no_proxy import v_H
+                from BANG.utils_numba_1D_32bit_no_proxy import all_Xdot
+                from BANG.utils_numba_1D_32bit_no_proxy import Y1
+                from BANG.utils_numba_1D_32bit_no_proxy import Y2
                 self._bulge_rho   = herquinst_rho 
                 self._bulge_sigma = herquinst_sigma_BH 
                 self._bulge_vel   = v_H 
@@ -2450,16 +2450,16 @@ class model_gpu_BH():
                 print('Error')
                 exit()
 
-            from utils_numba_1D_32bit_no_proxy import rho_D
-            from utils_numba_1D_32bit_no_proxy import v_D
-            from utils_numba_1D_32bit_no_proxy import v_H
-            from utils_numba_1D_32bit_no_proxy import v_tot_BH
-            from utils_numba_1D_32bit_no_proxy import avg_rho_v
-            from utils_numba_1D_32bit_no_proxy import avg_LM
-            from utils_numba_1D_32bit_no_proxy import sum_likelihood
-            from utils_numba_1D_32bit_no_proxy import coordinate_transformation
-            from utils_numba_1D_32bit_no_proxy import Xfunction
-            from utils_numba_1D_32bit_no_proxy import v_BH
+            from BANG.utils_numba_1D_32bit_no_proxy import rho_D
+            from BANG.utils_numba_1D_32bit_no_proxy import v_D
+            from BANG.utils_numba_1D_32bit_no_proxy import v_H
+            from BANG.utils_numba_1D_32bit_no_proxy import v_tot_BH
+            from BANG.utils_numba_1D_32bit_no_proxy import avg_rho_v
+            from BANG.utils_numba_1D_32bit_no_proxy import avg_LM
+            from BANG.utils_numba_1D_32bit_no_proxy import sum_likelihood
+            from BANG.utils_numba_1D_32bit_no_proxy import coordinate_transformation
+            from BANG.utils_numba_1D_32bit_no_proxy import Xfunction
+            from BANG.utils_numba_1D_32bit_no_proxy import v_BH
 
        
         self._coordinate_transformation = coordinate_transformation
@@ -3035,23 +3035,23 @@ class model_gpu():
         '''
         if self.fast_math == True:
             if self.bulge_type=='hernquist':
-                from utils_numba_1D_32bit import herquinst_rho
-                from utils_numba_1D_32bit import herquinst_sigma
-                from utils_numba_1D_32bit import v_H
+                from BANG.utils_numba_1D_32bit import herquinst_rho
+                from BANG.utils_numba_1D_32bit import herquinst_sigma
+                from BANG.utils_numba_1D_32bit import v_H
                 self._bulge_rho   = herquinst_rho 
                 self._bulge_sigma = herquinst_sigma 
                 self._bulge_vel   = v_H 
             elif self.bulge_type=='jaffe':
-                from utils_numba_1D_32bit import jaffe_rho        
-                from utils_numba_1D_32bit import jaffe_sigma  
-                from utils_numba_1D_32bit import v_J
+                from BANG.utils_numba_1D_32bit import jaffe_rho        
+                from BANG.utils_numba_1D_32bit import jaffe_sigma  
+                from BANG.utils_numba_1D_32bit import v_J
                 self._bulge_rho   = jaffe_rho
                 self._bulge_sigma = jaffe_sigma
                 self._bulge_vel   = v_J
             elif self.bulge_type=='dehnen':
-                from utils_numba_1D_32bit import dehnen        
-                #from utils_numba_1D_32bit import jaffe_sigma  
-                from utils_numba_1D_32bit import v_dehnen
+                from BANG.utils_numba_1D_32bit import dehnen        
+                #from BANG.utils_numba_1D_32bit import jaffe_sigma  
+                from BANG.utils_numba_1D_32bit import v_dehnen
                 self._bulge = dehnen
                 self._bulge_vel = v_dehnen
                 
@@ -3060,43 +3060,43 @@ class model_gpu():
                 exit()
             
             if self.halo_type=='hernquist':
-                from utils_numba_1D_32bit import v_Halo
+                from BANG.utils_numba_1D_32bit import v_Halo
                 self._halo_vel = v_Halo
                 self.halo_radius_name = 'log10_halo_radius'
                 self.halo_mass_name   = 'log10_halo_fraction'
                 
             elif self.halo_type=='NFW':
-                from utils_numba_1D_32bit import v_NFW
+                from BANG.utils_numba_1D_32bit import v_NFW
                 self._halo_vel = v_NFW
                 self.halo_radius_name = 'concentration'
                 self.halo_mass_name   = 'log10_halo_fraction'
 
-            from utils_numba_1D_32bit import rho_D
-            from utils_numba_1D_32bit import v_D
-            from utils_numba_1D_32bit import v_tot
-            from utils_numba_1D_32bit import avg_rho_v
-            from utils_numba_1D_32bit import sum_likelihood
-            from utils_numba_1D_32bit import coordinate_transformation
-            from utils_numba_1D_32bit import Xfunction
-            from utils_numba_1D_32bit import avg_sigma
+            from BANG.utils_numba_1D_32bit import rho_D
+            from BANG.utils_numba_1D_32bit import v_D
+            from BANG.utils_numba_1D_32bit import v_tot
+            from BANG.utils_numba_1D_32bit import avg_rho_v
+            from BANG.utils_numba_1D_32bit import sum_likelihood
+            from BANG.utils_numba_1D_32bit import coordinate_transformation
+            from BANG.utils_numba_1D_32bit import Xfunction
+            from BANG.utils_numba_1D_32bit import avg_sigma
         else:
             if self.bulge_type=='hernquist':
-                from utils_numba_1D_32bit_no_proxy import herquinst_rho
-                from utils_numba_1D_32bit_no_proxy import herquinst_sigma
-                from utils_numba_1D_32bit_no_proxy import v_H
+                from BANG.utils_numba_1D_32bit_no_proxy import herquinst_rho
+                from BANG.utils_numba_1D_32bit_no_proxy import herquinst_sigma
+                from BANG.utils_numba_1D_32bit_no_proxy import v_H
                 self._bulge_rho   = herquinst_rho 
                 self._bulge_sigma = herquinst_sigma 
                 self._bulge_vel   = v_H 
             elif self.bulge_type=='jaffe':
-                from utils_numba_1D_32bit_no_proxy import jaffe_rho        
-                from utils_numba_1D_32bit_no_proxy import jaffe_sigma  
-                from utils_numba_1D_32bit_no_proxy import v_J
+                from BANG.utils_numba_1D_32bit_no_proxy import jaffe_rho        
+                from BANG.utils_numba_1D_32bit_no_proxy import jaffe_sigma  
+                from BANG.utils_numba_1D_32bit_no_proxy import v_J
                 self._bulge_rho   = jaffe_rho
                 self._bulge_sigma = jaffe_sigma
                 self._bulge_vel   = v_J
             elif self.bulge_type=='dehnen':
-                from utils_numba_1D_32bit import dehnen        
-                from utils_numba_1D_32bit import v_dehnen
+                from BANG.utils_numba_1D_32bit import dehnen        
+                from BANG.utils_numba_1D_32bit import v_dehnen
                 self._bulge = dehnen
                 self._bulge_vel = v_dehnen
             else:
@@ -3104,24 +3104,24 @@ class model_gpu():
                 exit()
 
             if self.halo_type=='hernquist':
-                from utils_numba_1D_32bit import v_Halo
+                from BANG.utils_numba_1D_32bit import v_Halo
                 self._halo_vel = v_Halo
                 self.halo_radius_name = 'log10_halo_radius'
                 self.halo_mass_name   = 'log10_halo_fraction'
                 
             elif self.halo_type=='NFW':
-                from utils_numba_1D_32bit import v_NFW
+                from BANG.utils_numba_1D_32bit import v_NFW
                 self._halo_vel = v_NFW
                 self.halo_radius_name = 'concentration'
                 self.halo_mass_name   = 'log10_halo_fraction'
-            from utils_numba_1D_32bit_no_proxy import rho_D
-            from utils_numba_1D_32bit_no_proxy import v_D
-            from utils_numba_1D_32bit_no_proxy import v_H
-            from utils_numba_1D_32bit_no_proxy import v_tot
-            from utils_numba_1D_32bit_no_proxy import avg_rho_v
-            from utils_numba_1D_32bit_no_proxy import sum_likelihood
-            from utils_numba_1D_32bit_no_proxy import coordinate_transformation
-            from utils_numba_1D_32bit_no_proxy import Xfunction
+            from BANG.utils_numba_1D_32bit_no_proxy import rho_D
+            from BANG.utils_numba_1D_32bit_no_proxy import v_D
+            from BANG.utils_numba_1D_32bit_no_proxy import v_H
+            from BANG.utils_numba_1D_32bit_no_proxy import v_tot
+            from BANG.utils_numba_1D_32bit_no_proxy import avg_rho_v
+            from BANG.utils_numba_1D_32bit_no_proxy import sum_likelihood
+            from BANG.utils_numba_1D_32bit_no_proxy import coordinate_transformation
+            from BANG.utils_numba_1D_32bit_no_proxy import Xfunction
 
         self._avg_sigma                 = avg_sigma
         self._coordinate_transformation = coordinate_transformation
@@ -3601,8 +3601,8 @@ class model_gpu():
             self._init_data()
             self._function_definition()
             self._load_tabulated()
-            from utils_numba_1D_32bit import avg_rho_v_all_output
-            from utils_numba_1D_32bit import avg_sigma_all_output
+            from BANG.utils_numba_1D_32bit import avg_rho_v_all_output
+            from BANG.utils_numba_1D_32bit import avg_sigma_all_output
             self._avg_sigma                 = avg_sigma_all_output
             self._avg_rho_v                 = avg_rho_v_all_output
             self._load_device_model()
@@ -3614,8 +3614,8 @@ class model_gpu():
             self._init_data()
             self._function_definition()
             self._load_tabulated()
-            from utils_numba_1D_32bit import avg_rho_v_all_output
-            from utils_numba_1D_32bit import avg_sigma_all_output
+            from BANG.utils_numba_1D_32bit import avg_rho_v_all_output
+            from BANG.utils_numba_1D_32bit import avg_sigma_all_output
             self._avg_sigma                 = avg_sigma_all_output
             self._avg_rho_v                 = avg_rho_v_all_output
             self._load_device_model()
@@ -3985,14 +3985,14 @@ class model_cpu():
 
         '''
         if self.halo_type=='hernquist':
-            from utils_easy import model_BDD_all_outputs
-            from utils_easy import likelihood_BDD
+            from BANG.utils_easy import model_BDD_all_outputs
+            from BANG.utils_easy import likelihood_BDD
             self._model      = model_BDD_all_outputs
             self._likelihood = likelihood_BDD
             self.halo_radius_name = 'log10_halo_radius'
         elif self.halo_type=='NFW':
-            from utils_easy import model_BDD_all_outputs
-            from utils_easy import likelihood_BDD
+            from BANG.utils_easy import model_BDD_all_outputs
+            from BANG.utils_easy import likelihood_BDD
             self._model      = model_BDD_all_outputs
             self._likelihood = likelihood_BDD
             self.halo_radius_name = 'concentration'
@@ -4336,14 +4336,14 @@ class model_cpu_BD():
 
         '''
         if self.halo_type=='hernquist':
-            from utils_easy import model_BD_all_outputs
-            from utils_easy import likelihood_BD
+            from BANG.utils_easy import model_BD_all_outputs
+            from BANG.utils_easy import likelihood_BD
             self._model      = model_BD_all_outputs
             self._likelihood = likelihood_BD
             self.halo_radius_name = 'log10_halo_radius'
         elif self.halo_type=='NFW':
-            from utils_easy import model_BD_all_outputs
-            from utils_easy import likelihood_BD
+            from BANG.utils_easy import model_BD_all_outputs
+            from BANG.utils_easy import likelihood_BD
             self._model      = model_BD_all_outputs
             self._likelihood = likelihood_BD
             self.halo_radius_name = 'concentration'
@@ -4664,14 +4664,14 @@ class model_cpu_DD():
 
         '''
         if self.halo_type=='hernquist':
-            from utils_easy import model_DD_all_outputs
-            from utils_easy import likelihood_DD
+            from BANG.utils_easy import model_DD_all_outputs
+            from BANG.utils_easy import likelihood_DD
             self._model      = model_DD_all_outputs
             self._likelihood = likelihood_DD
             self.halo_radius_name = 'log10_halo_radius'
         elif self.halo_type=='NFW':
-            from utils_easy import model_DD_all_outputs
-            from utils_easy import likelihood_DD
+            from BANG.utils_easy import model_DD_all_outputs
+            from BANG.utils_easy import likelihood_DD
             self._model      = model_DD_all_outputs
             self._likelihood = likelihood_DD
             self.halo_radius_name = 'concentration'
@@ -4851,8 +4851,8 @@ class model_cpu_BH():
         self.bulge_type               = bulge_type
 
         if self.bulge_type=='hernquist':
-            from utils_easy import model_hernquist_BH
-            from utils_easy import likelihood_hernquist_BH
+            from BANG.utils_easy import model_hernquist_BH
+            from BANG.utils_easy import likelihood_hernquist_BH
             self._model      = model_hernquist_BH 
             self._likelihood = likelihood_hernquist_BH 
         elif self.bulge_type=='jaffe':
@@ -5003,8 +5003,8 @@ class model_cpu_BD_BH():
         self.bulge_type               = bulge_type
 
         if self.bulge_type=='hernquist':
-            from utils_easy import model_hernquist_BD_BH
-            from utils_easy import likelihood_hernquist_BD_BH
+            from BANG.utils_easy import model_hernquist_BD_BH
+            from BANG.utils_easy import likelihood_hernquist_BD_BH
             self._model      = model_hernquist_BD_BH 
             self._likelihood = likelihood_hernquist_BD_BH 
         elif self.bulge_type=='jaffe':
@@ -5139,8 +5139,8 @@ class model_cpu_B_BH():
         self.bulge_type               = bulge_type
 
         if self.bulge_type=='hernquist':
-            from utils_easy import model_hernquist_B_BH
-            from utils_easy import likelihood_hernquist_B_BH
+            from BANG.utils_easy import model_hernquist_B_BH
+            from BANG.utils_easy import likelihood_hernquist_B_BH
             self._model      = model_hernquist_B_BH 
             self._likelihood = likelihood_hernquist_B_BH 
         elif self.bulge_type=='jaffe':
@@ -5247,8 +5247,8 @@ class model_cpu_B_BH():
 #
 #        self.device = torch.device('cpu')
 #        if self.bulge_type=='hernquist':
-#            from utils_easy import model_hernquist
-#            from utils_easy import likelihood_superresolution
+#            from BANG.utils_easy import model_hernquist
+#            from BANG.utils_easy import likelihood_superresolution
 #            self._model      = model_hernquist 
 #            self._likelihood = likelihood_superresolution 
 #            #from utils_python import model_BDD
@@ -5488,7 +5488,7 @@ class model_cpu_B_BH():
 #        self.device = torch.device('cuda')
 #
 #        if self.bulge_type=='hernquist':
-#            from utils_easy import likelihood_superresolution
+#            from BANG.utils_easy import likelihood_superresolution
 #            self._likelihood = likelihood_superresolution 
 #            from utils_python import super_resolution
 #            self._super_resolution = super_resolution
@@ -5502,16 +5502,16 @@ class model_cpu_B_BH():
 #        #self._not_prepare_data()
 #    def _function_definition_SR(self):
 #        if self.bulge_type=='hernquist':
-#            from utils_numba_1D_32bit import herquinst_rho
-#            from utils_numba_1D_32bit import herquinst_sigma
-#            from utils_numba_1D_32bit import v_H
+#            from BANG.utils_numba_1D_32bit import herquinst_rho
+#            from BANG.utils_numba_1D_32bit import herquinst_sigma
+#            from BANG.utils_numba_1D_32bit import v_H
 #            self._bulge_rho   = herquinst_rho 
 #            self._bulge_sigma = herquinst_sigma 
 #            self._bulge_vel   = v_H 
 #        elif self.bulge_type=='jaffe':
-#            from utils_numba_1D_32bit import jaffe_rho        
-#            from utils_numba_1D_32bit import jaffe_sigma  
-#            from utils_numba_1D_32bit import v_J
+#            from BANG.utils_numba_1D_32bit import jaffe_rho        
+#            from BANG.utils_numba_1D_32bit import jaffe_sigma  
+#            from BANG.utils_numba_1D_32bit import v_J
 #            self._bulge_rho   = jaffe_rho
 #            self._bulge_sigma = jaffe_sigma
 #            self._bulge_vel   = v_J
@@ -5519,14 +5519,14 @@ class model_cpu_B_BH():
 #            print('Error')
 #            exit()
 #
-#        from utils_numba_1D_32bit import rho_D
-#        from utils_numba_1D_32bit import v_D
-#        from utils_numba_1D_32bit import v_H
-#        from utils_numba_1D_32bit import v_tot
-#        from utils_numba_1D_32bit import avg_rho_v
-#        from utils_numba_1D_32bit import avg_LM
-#        from utils_numba_1D_32bit import coordinate_transformation
-#        from utils_numba_1D_32bit import Xfunction
+#        from BANG.utils_numba_1D_32bit import rho_D
+#        from BANG.utils_numba_1D_32bit import v_D
+#        from BANG.utils_numba_1D_32bit import v_H
+#        from BANG.utils_numba_1D_32bit import v_tot
+#        from BANG.utils_numba_1D_32bit import avg_rho_v
+#        from BANG.utils_numba_1D_32bit import avg_LM
+#        from BANG.utils_numba_1D_32bit import coordinate_transformation
+#        from BANG.utils_numba_1D_32bit import Xfunction
 #        print('using fast math')
 #       
 #        self._coordinate_transformation = coordinate_transformation
@@ -5538,7 +5538,7 @@ class model_cpu_B_BH():
 #        self._avg_rho_v                 = avg_rho_v
 #        self._avg_LM                    = avg_LM
 #
-#        from utils_numba_1D_32bit import sum_likelihood
+#        from BANG.utils_numba_1D_32bit import sum_likelihood
 #        self._sum_likelihood            = sum_likelihood
 #
 #    def _prepare_data(self):
